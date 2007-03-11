@@ -1,0 +1,91 @@
+ <table width="100%" border="0" cellspacing="2" cellpadding="1">
+  <tr>
+    <td>
+      <table width="100%" border="0" cellspacing="2" cellpadding="5" bgcolor="#FFFFFF">
+        <tr class="header"> 
+          <td>
+              <table width="100%">
+                <tr>
+                  <form name="results" method="get" action="{GLOBALS[_SERVER][PHP_SELF]:h}">
+                  <td width="50%" height="22" ><b>Results Per Page:</b> 
+                    {getPerPageSelectBox():h}
+                    
+                    <input type="submit" border="0" alt="Show" value="Show"> 
+                  </td>
+                  
+                   <input type="hidden" name="example" value="{_GET[example]}">
+                  </form>
+                 
+                  <td width="50%" align="right" >
+    
+                   </td>
+                </tr>
+            </table>
+          </td>
+         </tr>
+      </table>
+    </td>
+  </tr>
+  <tr>
+      <td align="right"class="navinfo" >{getPaging():h}</td>
+  </tr>
+  <tr>
+    <td >
+    
+<table width="100%" border="0" cellspacing="0" cellpadding="1">
+               <tr>
+                  <td>
+                    <table width="100%" cellspacing="0" cellpadding="5">
+                        <tr> 
+                        <td height="28" width="15%" class="columnHeader"><a href="{columnHeader.name[link]:h}">{columnHeader.name[label]:h}</a></td>
+                        <td height="28" width="15%" class="columnHeader"><a href="{columnHeader.surname[link]:h}">{columnHeader.surname[label]:h}</a></td>
+                      </tr>
+                    </table>
+                </td>
+              </tr>
+        <tr> 
+          <td  width="50%" height="22"> 
+            <table width="100%" border="0" cellspacing="0" cellpadding="0">
+              <tr>
+                  <td colspan="2">
+                    <table width="100%" border="0" cellspacing="2" cellpadding="5" bgcolor="#FFFFFF">
+                     {if:recordSet}
+                     <tr class="{getRowCSS()}" flexy:foreach="recordSet,k,row">
+                      <td>
+                           <table width="100%" cellspacing="1" cellpadding="0">
+                              <tr>
+                              <td width="15%" class="rowCell"> {row[name]}</td>
+                              <td width="15%" class="rowCell">{row[surname]}</td>
+                             </tr>
+                            <tr>
+                                <td height="1"><img src="images/spacer.gif" height="1" width="1"></td>
+                            </tr>
+                         </table>
+                      </td>
+                    </tr>
+                    {else:}
+                    <tr class="even">
+                      <td >
+                       No Results     
+                     </td>
+                    </tr>
+                    {end:}
+                    </table>
+                  </td>
+              </tr>
+            </table>
+          </td>
+        </tr>
+      </table>
+ 
+ </td>
+  </tr>
+  <tr> 
+     <td>
+      <table width="100%" cellpadding="0" cellspacing="0">
+          <tr><td class="navinfo" align="left" width="50%"><p>Showing records {firstRecord} to {lastRecord} from {totalRecordsNum}, page {currentPage} of {pagesNum}</p></td></tr>
+        <tr><td class="navinfo" align="right" width="50%">{getPaging():h}</td></tr>
+      </table>
+      </td>
+  </tr>
+</table>
