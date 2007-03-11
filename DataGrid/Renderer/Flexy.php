@@ -1,8 +1,7 @@
 <?php
-/* vim: set expandtab tabstop=4 shiftwidth=4: */
-
 /**
- * PHP version 4 
+ * PHP version 4
+ *
  * LICENSE: This source file is subject to version 3.0 of the PHP license
  * that is available through the world-wide-web at the following URI:
  * http://www.php.net/license/3_0.txt.  If you did not receive a copy of
@@ -10,7 +9,7 @@
  * send a note to license@php.net so we can mail you a copy immediately.
  * 
  * @category   Structures
- * @package    Structures_DataGrid
+ * @package    Structures_DataGrid_Renderer_Flexy
  * @author     Andrew Nagy <asnagy@webitecture.org>  
  * @author     Olivier Guilyardi <olivier@samalyse.com>
  * @author     Mark Wiesemann <wiesemann@php.net>
@@ -18,7 +17,7 @@
  * @copyright  1997-2005 The PHP Group
  * @license    http://www.php.net/license/3_0.txt  PHP License 3.0
  * @version    CVS: $Id$
- * @link       http://pear.php.net/package/Structures_DataGrid
+ * @link       http://pear.php.net/package/Structures_DataGrid_Renderer_Flexy
  * @see        HTML_Template_Flexy, Pager
  */
 
@@ -32,31 +31,24 @@ require_once 'Structures/DataGrid/Renderer.php';
  * - selfPath:            (string) The complete path for sorting and paging links.
  *                                 (default: $_SERVER['PHP_SELF'])
  * - sortingResetsPaging: (bool)   Whether sorting HTTP queries reset paging.  
- *                                 (default: true)
  * - convertEntities:     (bool)   Whether or not to convert html entities.
  *                                 This calls htmlspecialchars(). 
- *                                 (default: true)
  * - pagerOptions:        (array)  The custom options to be sent to the Pager renderer.
- * - headerAttributes:    (array)  The settings specific for rendering the column header.
- *   - assocColumns:      (bool)   Whether or not to build the column header as 
+ * - assocColumns:        (bool)   Whether or not to build the column header as 
  *                                 an associate array.
- *                                 (default: true)
- *   - formatter:         (array)  The callback array for a column header formatter method.
+ * - formatter:           (array)  The callback array for a column header formatter method.
  *                                 (default: array($this,'defaultHeaderFormatter'))
- *   - columnNames:       (array)  The set of column names to use for the column header.
- *                                 (default: array)
+ * - columnNames:         (array)  The set of column names to use for the column header.
  * - oddRowAttribute:     (string) The css class to be used for odd row listings.
- *                                 (default: odd)
- * - evenRowAttribute     (string) The css class to be used for the even row listings.
- *                                 (default: even)
- * - resultsFormat        (string) The format of the results message in sprintf format.
- *                                 (default: 'You have %s results in %s pages')
+ * - evenRowAttribute:    (string) The css class to be used for the even row listings.
+ * - resultsFormat:       (string) The format of the results message in sprintf format.
  * 
  * SUPPORTED OPERATION MODES:
  *
  * - Container Support: yes
  * - Output Buffering:  yes
  * - Direct Rendering:  no
+ * - Streaming:         no
  *
  * GENERAL NOTES:
  *
@@ -155,16 +147,16 @@ require_once 'Structures/DataGrid/Renderer.php';
  * echo $dg->getOutput();
  * </code>
  *
+ * @version    Release: @package_version@
  * @category   Structures
- * @package    Structures_DataGrid
+ * @package    Structures_DataGrid_Renderer_Flexy
  * @author     Andrew S. Nagy <asnagy@webitecture.org>
  * @author     Olivier Guilyardi <olivier@samalyse.com>
  * @author     Mark Wiesemann <wiesemann@php.net>
  * @author     Daniel Rossi <pear@electroteque.org>
  * @copyright  1997-2005 The PHP Group
  * @license    http://www.php.net/license/3_0.txt  PHP License 3.0
- * @version    Release: @package_version@
- * @link       http://pear.php.net/package/Structures_DataGrid
+ * @link       http://pear.php.net/package/Structures_DataGrid_Renderer_Flexy
  * @see        HTML_Template_Flexy, Pager
  * @access     public
  */
