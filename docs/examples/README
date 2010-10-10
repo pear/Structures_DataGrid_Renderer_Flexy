@@ -1,0 +1,4 @@
+NOTE: 
+Im unable to work out how to create a dir tag without a file tag in it, so the directory templates_c cant be installed.
+
+Create a compile directory called templates_c and chmod it to 777.
